@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* ── Shimmer animation for skeleton loaders ── */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── CSS variables — used inline via var() across all pages ── */
+:root {
+  /* Brand */
+  --color-primary:        #ff6b00;
+  --color-primary-hover:  #e65f00;
+  --color-primary-soft:   #fff4eb;
+  --color-primary-muted:  #ffe0c7;
+
+  /* Surfaces */
+  --color-bg:             #f7f7f6;
+  --color-card:           #ffffff;
+
+  /* Borders */
+  --color-border:         #e8e8e7;
+  --color-border-strong:  #d1d1cf;
+
+  /* Text */
+  --color-text:           #111110;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary:  #9ca3af;
+  --color-placeholder:    #b4b4b2;
+
+  /* Semantic */
+  --color-error:          #ef4444;
+  --color-error-hover:    #dc2626;
+  --color-error-soft:     #fef2f2;
+  --color-success:        #22c55e;
+  --color-success-soft:   #f0fdf4;
+  --color-warning:        #f59e0b;
+  --color-warning-soft:   #fffbeb;
+
+  /* Typography */
+  --font-display: 'Bricolage Grotesque', -apple-system, sans-serif;
+  --font-body:    'DM Sans', -apple-system, sans-serif;
+
+  /* Radius */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   18px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.09), 0 4px 8px rgba(0,0,0,0.04);
+  --shadow-xl: 0 20px 48px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.05);
+}
+
+/* ── Base resets ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+p   { margin: 0; }
+a   { text-decoration: none; color: inherit; }
+img { display: block; }
+
+input::placeholder { color: var(--color-placeholder); }
+
+
+a, button, input, select, textarea {
+  transition:
+    background-color 0.15s ease,
+    border-color     0.15s ease,
+    color            0.15s ease,
+    box-shadow       0.15s ease,
+    opacity          0.15s ease,
+    transform        0.12s ease;
+}
